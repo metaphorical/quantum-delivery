@@ -9,3 +9,8 @@ services:
     volumes:
       - ./godata:/godata
       - ./go-home:/home/go gocd/gocd-server
+  cd-agent:
+    image: gocd/gocd-agent-alpine-3.5:v17.3.0
+    container_name: quantum-cd-agent
+    environment:
+     GO_SERVER_URL: "http://localhost:8153/go"
