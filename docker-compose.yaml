@@ -1,0 +1,11 @@
+version: '2'
+services:
+  cd-server:
+    image: gocd/gocd-server:v17.3.0
+    container_name: quantum-cd-server
+    ports:
+      - "8153:8153"
+      - "8154:8154"
+    volumes:
+      - ./godata:/godata
+      - ./go-home:/home/go gocd/gocd-server
